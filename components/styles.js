@@ -13,10 +13,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   controlButton: {
+    marginHorizontal :10,
   },
   controlButtonText: {
     margin: 10,
-    fontSize: 15,
   },
   title: {
     flex: 1,
@@ -28,14 +28,18 @@ const styles = StyleSheet.create({
   },
   calendarHeading: {
     flexDirection: 'row',
+  },
+  calendarHeadingBorder: {
     borderBottomWidth: 1,
     borderBottomColor: '#C4C5CE',
+    marginHorizontal: 15,
   },
   dayHeading: {
     flex: 1,
     fontSize: 15,
     textAlign: 'center',
     marginVertical: 5,
+    marginBottom:15,
   },
   weekendHeading: {
     flex: 1,
@@ -56,12 +60,19 @@ const styles = StyleSheet.create({
     width: DEVICE_WIDTH / 7,
   },
   dayButtonFiller: {
+    alignItems: 'center',
     padding: 5,
     width: DEVICE_WIDTH / 7,
   },
   day: {
     fontSize: 16,
     alignSelf: 'center',
+  },
+  fillerDay: {
+    color: '#979695',
+  },
+  activeDay: {
+    color: '#2E2E2E',
   },
   eventIndicatorFiller: {
     marginTop: 3,
@@ -102,6 +113,9 @@ const styles = StyleSheet.create({
   weekendDayText: {
     color: '#cccccc',
   },
+  prevBtn: {
+    marginTop:2,
+  }
 });
 
 export default styles;

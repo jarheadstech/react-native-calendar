@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
 } from 'react-native';
 
 import Day from './Day';
@@ -68,8 +69,8 @@ export default class Calendar extends Component {
     width: DEVICE_WIDTH,
     dayHeadings: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     eventDates: [],
-    monthNames: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June',
+      'July', 'August', 'September', 'October', 'November', 'December'],
     nextButtonText: 'Next',
     prevButtonText: 'Prev',
     removeClippedSubviews: true,
@@ -263,6 +264,7 @@ export default class Calendar extends Component {
         days.push(
           this.renderDay({
             key: renderIndex,
+            caption: thisMoment.format('D'),
             filler: true,
             customStyle: this.props.customStyle
           })
@@ -314,14 +316,18 @@ export default class Calendar extends Component {
     }
 
     return (
+      <View>
       <View style={[styles.calendarHeading, this.props.customStyle.calendarHeading]}>
         {headings}
+      </View>
+      <View style={styles.calendarHeadingBorder}/>
       </View>
     );
   }
 
   renderTopBar() {
     let localizedMonth = this.props.monthNames[this.state.currentMoment.month()];
+    let localizedDate = this.state.currentMoment.day();
     return this.props.showControls
       ? (
         <View style={[styles.calendarControls, this.props.customStyle.calendarControls]}>
@@ -329,22 +335,24 @@ export default class Calendar extends Component {
             style={[styles.controlButton, this.props.customStyle.controlButton]}
             onPress={this.onPrev}
           >
-            <Text style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
-              {this.props.prevButtonText}
-            </Text>
+            <View style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
+               <Image style={styles.prevBtn}  source = {require('../images/prev.png')}/>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.title} onPress={() => this.props.onTitlePress && this.props.onTitlePress()}>
+            <View>
             <Text style={[styles.titleText, this.props.customStyle.title]}>
-              {localizedMonth} {this.state.currentMoment.year()}
+              {localizedMonth} {moment(this.props.today).date()}, {this.state.currentMoment.year()}
             </Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.controlButton, this.props.customStyle.controlButton]}
             onPress={this.onNext}
           >
-            <Text style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
-              {this.props.nextButtonText}
-            </Text>
+            <View style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
+              <Image  source = {require('../images/next.png')}/>
+            </View>
           </TouchableOpacity>
         </View>
       )
