@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
   },
   calendarHeading: {
     flexDirection: 'row',
-    borderTopWidth: 1,
     borderBottomWidth: 1,
+    borderBottomColor: '#C4C5CE',
   },
   dayHeading: {
     flex: 1,
@@ -54,8 +54,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
     width: DEVICE_WIDTH / 7,
-    borderTopWidth: 1,
-    borderTopColor: '#e9e9e9',
   },
   dayButtonFiller: {
     padding: 5,

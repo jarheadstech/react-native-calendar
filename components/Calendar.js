@@ -240,7 +240,7 @@ export default class Calendar extends Component {
         days.push((
           this.renderDay({
             startOfMonth: startOfArgMoment,
-            isWeekend: isoWeekday === 0 || isoWeekday === 6,
+            isWeekend: isoWeekday === 0,
             key: renderIndex,
             onPress: () => {
               this.selectDate(thisMoment);
@@ -304,7 +304,7 @@ export default class Calendar extends Component {
       headings.push(
         <Text
           key={i}
-          style={j === 0 || j === 6 ?
+          style={j === 0 ?
             [styles.weekendHeading, this.props.customStyle.weekendHeading] :
             [styles.dayHeading, this.props.customStyle.dayHeading]}
         >
