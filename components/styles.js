@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   fillerDay: {
-    color: '#979695',
+    opacity:.54,
   },
   activeDay: {
     color: '#2E2E2E',

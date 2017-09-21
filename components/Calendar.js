@@ -264,6 +264,7 @@ export default class Calendar extends Component {
         days.push(
           this.renderDay({
             key: renderIndex,
+            isWeekend: isoWeekday === 0,
             caption: thisMoment.format('D'),
             filler: true,
             customStyle: this.props.customStyle
