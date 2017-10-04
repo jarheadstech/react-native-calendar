@@ -86,7 +86,6 @@ export default class Day extends Component {
       isToday,
       showEventIndicators,
     } = this.props;
-
     return filler
       ? (
         <TouchableWithoutFeedback>
@@ -106,6 +105,7 @@ export default class Day extends Component {
             <View style={this.dayCircleStyle(isWeekend, isSelected, isToday, event)}>
               <Text style={[styles.activeDay, this.dayTextStyle(isWeekend, isSelected, isToday, event)]}>{caption}</Text>
             </View>
+            <View style={styles.eventIndicatorContainer}>
             {showEventIndicators &&
             <View style={[
               styles.eventIndicatorFiller,
@@ -114,7 +114,18 @@ export default class Day extends Component {
               event && customStyle.eventIndicator,
               event && event.eventIndicator]}
             />
-            }
+          }
+          {
+            event && event.no_of_events > 1 &&
+            <View style={[
+              styles.eventIndicatorFiller,
+              customStyle.eventIndicatorFiller,
+              event && styles.eventIndicator,
+              event && customStyle.eventIndicator,
+              event && event.eventIndicator]}
+            />
+          }
+          </View>
           </View>
         </TouchableOpacity>
       );

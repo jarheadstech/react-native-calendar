@@ -115,6 +115,9 @@ const styles = StyleSheet.create({
   },
   prevBtn: {
     marginTop:2,
+  },
+  eventIndicatorContainer: {
+    flexDirection: 'row',
   }
 });
 

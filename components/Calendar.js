@@ -124,7 +124,14 @@ export default class Calendar extends Component {
     if (events) {
       events.forEach(event => {
         if (event.date) {
-          parsedDates[event.date] = event;
+          if(parsedDates.hasOwnProperty(event.date)){
+             var count=parsedDates[event.date]['no_of_events'];
+             parsedDates[event.date]['no_of_events'] = Number(count)+1;
+          }
+          else{
+             event['no_of_events']=1;
+             parsedDates[event.date] = event;
+          }
         }
       });
     } else {
