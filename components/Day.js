@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback,
   View,
+  Image,
 } from 'react-native';
 
 import styles from './styles';
@@ -102,9 +103,18 @@ export default class Day extends Component {
           onLongPress={this.props.onLongPress}
         >
           <View style={this.dayButtonStyle(isWeekend, isSelected, isToday, event)}>
+          {
+            event && event.no_of_events > 1 ?
+            <View style={this.dayCircleStyle( event)}>
+              <Image style={styles.multiEventImg} source = {require('../images/multiple_circle.png')}/>
+                <Text style={[styles.activeDay, this.dayTextStyle(isWeekend, isSelected, isToday, event)]}>{caption}</Text>
+            
+            </View>
+            :
             <View style={this.dayCircleStyle(isWeekend, isSelected, isToday, event)}>
               <Text style={[styles.activeDay, this.dayTextStyle(isWeekend, isSelected, isToday, event)]}>{caption}</Text>
             </View>
+          }
             <View style={styles.eventIndicatorContainer}>
             {showEventIndicators &&
             <View style={[

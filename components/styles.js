@@ -118,7 +118,13 @@ const styles = StyleSheet.create({
   },
   eventIndicatorContainer: {
     flexDirection: 'row',
-  }
+  },
+  multiEventImg:{
+    top:1,
+    height:28,
+    width:28,
+    position: 'absolute',
+  },
 });
 
 export default styles;
