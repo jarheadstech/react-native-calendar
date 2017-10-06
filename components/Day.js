@@ -126,7 +126,7 @@ export default class Day extends Component {
             />
           }
           {
-            event && event.no_of_events > 1 &&
+            showEventIndicators && event && event.no_of_events > 1 &&
             <View style={[
               styles.eventIndicatorFiller,
               customStyle.eventIndicatorFiller,
