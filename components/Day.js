@@ -39,11 +39,15 @@ export default class Day extends Component {
       }
     }
 
-    if (event) {
+   if (event) {
       if (isSelected) {
         dayCircleStyle.push(styles.hasEventDaySelectedCircle, customStyle.hasEventDaySelectedCircle, event.hasEventDaySelectedCircle);
       } else {
-        dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, event.hasEventCircle);
+        if (typeof event.hasEventCircle.backgroundColor != 'undefined')
+          dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, event.hasEventCircle);
+        else
+          dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, {backgroundColor:'rgb(123, 174, 253)'});
+
       }
     }
     return dayCircleStyle;
