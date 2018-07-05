@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {
   Dimensions,
   ScrollView,
@@ -7,6 +7,7 @@ import {
   View,
   Image,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Day from './Day';
 
@@ -350,7 +351,7 @@ export default class Calendar extends Component {
           <TouchableOpacity style={styles.title} onPress={() => this.props.onTitlePress && this.props.onTitlePress()}>
             <View>
             <Text style={[styles.titleText, this.props.customStyle.title]}>
-              {localizedMonth} {moment(this.props.today).date()}, {this.state.currentMoment.year()}
+              {localizedMonth}, {this.state.currentMoment.year()}
             </Text>
             </View>
           </TouchableOpacity>
