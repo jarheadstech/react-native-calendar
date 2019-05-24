@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   controlButton: {
-    marginHorizontal :10,
+    marginHorizontal :5,
   },
   controlButtonText: {
     margin: 10,
@@ -92,6 +92,9 @@ const styles = StyleSheet.create({
     borderRadius: 14,
   },
   currentDayCircle: {
+    backgroundColor: 'red',
+  },
+  currentDayCircleEvent : {
     backgroundColor: 'red',
   },
   currentDayText: {
