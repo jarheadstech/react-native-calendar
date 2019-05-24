@@ -32,6 +32,10 @@ export default class Day extends Component {
     const { customStyle } = this.props;
     const dayCircleStyle = [styles.dayCircleFiller, customStyle.dayCircleFiller];
 
+    if (isToday) {
+      dayCircleStyle.push(styles.currentDayCircle, event ? customStyle.currentDayCircleEvent : customStyle.currentDayCircle);
+    }
+
     if (isSelected) {
       if (isToday) {
         dayCircleStyle.push(styles.currentDayCircle, customStyle.currentDayCircle);

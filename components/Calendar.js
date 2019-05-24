@@ -345,7 +345,7 @@ export default class Calendar extends Component {
             onPress={this.onPrev}
           >
             <View style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
-               <Image style={styles.prevBtn}  source = {require('../images/prev.png')}/>
+               <Image style={styles.prevBtn}  source = {require('../images/prev1.png')}/>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.title} onPress={() => this.props.onTitlePress && this.props.onTitlePress()}>
@@ -360,7 +360,7 @@ export default class Calendar extends Component {
             onPress={this.onNext}
           >
             <View style={[styles.controlButtonText, this.props.customStyle.controlButtonText]}>
-              <Image  source = {require('../images/next.png')}/>
+              <Image  source = {require('../images/next1.png')}/>
             </View>
           </TouchableOpacity>
         </View>
