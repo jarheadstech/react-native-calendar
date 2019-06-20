@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   calendarHeadingBorder: {
     borderBottomWidth: 1,
-    borderBottomColor: '#C4C5CE',
+    borderBottomColor: '#B8D2FB',
     marginHorizontal: 15,
   },
   dayHeading: {
@@ -53,6 +53,12 @@ const styles = StyleSheet.create({
   },
   weekendDayButton: {
     backgroundColor: '#fafafa',
+  },
+  todayDayButton: {
+    backgroundColor: '#b8bcc3',
+    // width: DEVICE_WIDTH / 10,
+    // marginLeft: DEVICE_WIDTH / 45,
+    // marginRight: DEVICE_WIDTH / 45
   },
   dayButton: {
     alignItems: 'center',
@@ -110,8 +116,8 @@ const styles = StyleSheet.create({
   hasEventText: {
   },
   selectedDayText: {
-    color: 'white',
-    fontWeight: 'bold',
+    // color: 'white',
+    // fontWeight: 'bold',
   },
   weekendDayText: {
     color: '#cccccc',
