@@ -32,29 +32,29 @@ export default class Day extends Component {
     const { customStyle } = this.props;
     const dayCircleStyle = [styles.dayCircleFiller, customStyle.dayCircleFiller];
 
-    if (isToday) {
-      dayCircleStyle.push(styles.currentDayCircle, event ? customStyle.currentDayCircleEvent : customStyle.currentDayCircle);
-    }
+    // if (isToday) {
+    //   dayCircleStyle.push(styles.currentDayCircle, event ? customStyle.currentDayCircleEvent : customStyle.currentDayCircle);
+    // }
 
     if (isSelected) {
-      if (isToday) {
-        dayCircleStyle.push(styles.currentDayCircle, customStyle.currentDayCircle);
-      } else {
-        dayCircleStyle.push(styles.selectedDayCircle, customStyle.selectedDayCircle);
-      }
+      // if (isToday) {
+      //   dayCircleStyle.push(styles.currentDayCircle, customStyle.currentDayCircle);
+      // } else {
+      // dayCircleStyle.push(styles.selectedDayCircle, customStyle.selectedDayCircle);
+      //  }
     }
 
-   if (event) {
-      if (isSelected) {
-        dayCircleStyle.push(styles.hasEventDaySelectedCircle, customStyle.hasEventDaySelectedCircle, event.hasEventDaySelectedCircle);
-      } else {
-        if (typeof event.hasEventCircle.backgroundColor != 'undefined')
-          dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, event.hasEventCircle);
-        else
-          dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, {backgroundColor:'rgb(123, 174, 253)'});
+    if (event) {
+      // if (isSelected) {
+      //   dayCircleStyle.push(styles.hasEventDaySelectedCircle, customStyle.hasEventDaySelectedCircle, event.hasEventDaySelectedCircle);
+      // } else {
+      if (typeof event.hasEventCircle.backgroundColor != 'undefined')
+        dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, event.hasEventCircle);
+      else
+        dayCircleStyle.push(styles.hasEventCircle, customStyle.hasEventCircle, { backgroundColor: 'rgb(123, 174, 253)' });
 
-      }
     }
+    //}
     return dayCircleStyle;
   }
 
@@ -79,6 +79,10 @@ export default class Day extends Component {
   dayButtonStyle = (isWeekend, isSelected, isToday, event) => {
     const { customStyle } = this.props;
     const dayButtonStyle = [styles.dayButton, customStyle.dayButton];
+
+    if (isToday) {
+      dayButtonStyle.push(styles.todayDayButton, customStyle.todayDayButton);
+    }
 
     if (isWeekend) {
       dayButtonStyle.push(styles.weekendDayButton, customStyle.weekendDayButton);
